@@ -9,26 +9,31 @@
       #txtEmail
       type="text"
       class="form-control mb-2"
-      (input)="onFieldUpdated('email', txtEmail.value)">
+      (input)="onFieldUpdated('email', txtEmail.value)"
+      [value]="user().email">
 
       <input
         #txtFirstName
         type="text"
         class="form-control mb-2"
-        (input)="onFieldUpdated('first_name', txtFirstName.value)">
+        (input)="onFieldUpdated('first_name', txtFirstName.value)"
+        [value]="user().first_name">
 
       <input
         #txtLastName
         type="text"
         class="form-control mb-2"
-        (input)="onFieldUpdated('last_name', txtLastName.value)">
+        (input)="onFieldUpdated('last_name', txtLastName.value)"
+        [value]="user().last_name">
 
   </div>
 
   <div class="col-6">
     <!--Data del usuario-->
     <pre>
+      {{user() | json}}
 
+      {{fullName() | json}}
     </pre>
   </div>
 </div>
